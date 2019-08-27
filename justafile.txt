@@ -1,0 +1,3 @@
+Name:Stu\n
+Id:1,Lamp\n
+Id:2,Car\n
