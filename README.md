@@ -7,6 +7,7 @@ This is not a build for billions project.  It is for my education and a starting
 The phone app is being developed with Kodular and the backend uses PHP and MySQL on my personal hosting account. This obviously makes it difficult to show the code for security reasons. My intent is to have one file that needs editing before it can be used by others.
 
 To do 8/27/19:
+    
     Notifications / chat. Currently using OneSignal and Firebase. Investigate Firebase Cloud Messaging (FCM) directly.  Chat database is currently on MySQL. Consider using Firebase for that as well.
 
     Reloading lists after adding / deleting. Minor bugs make this usable but combersome.
