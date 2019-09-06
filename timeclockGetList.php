@@ -2,7 +2,7 @@
 header('Content-type: application/json');
 include ("base_info_i.php");
 $anarray = array();
-$who = $_POST['who'];
+$who = $_POST['who']; if(!$who){$who = $_GET['who'];}
 $clockin = $_POST['clockin'];
 $now1 = time();
 $now = date('Y-m-d H:i:00',$now1);
@@ -12,6 +12,7 @@ if ($clockin){
 }
 elseif($who){
 	$sql = "SELECT * FROM timeclock WHERE (name = '$who') && (clockin = '0000-00-00 00:00:00') ORDER BY name,starttime";
+//	$sql = "SELECT * FROM timeclock WHERE (clockin = '0000-00-00 00:00:00') ORDER BY name,starttime";
 }
 else{
 	$sql = "SELECT * FROM timeclock ORDER BY name,starttime";
@@ -34,7 +35,8 @@ else{
 		$late = $myrow['late'];
 		$deltatime = $myrow['deltatime'];
 		if($deltatime < 0){$deltatime = $deltatime;}
-array_push($anarray,$id,$name,$event,$details,$endtime,$clockin,$late,$deltatime);
+array_push($anarray,$id,$name,$event,$details,$starttime,$endtime,$clockin,$deltatime);
+//array_push($anarray,$name,$clockin);
 
 
 }

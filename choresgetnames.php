@@ -6,15 +6,15 @@ $shortlist = $_POST['shortlist'];
 /////////////////////////////////////////////////////// get list of current userids //////////////////////////
 
 if ($shortlist == 'short'){
-	$sql = "SELECT DISTINCT userid FROM choreslist ORDER BY userid";
+	$sql = "SELECT DISTINCT name FROM users ORDER BY name";
 }
 else{
-	$sql = "SELECT DISTINCT userid FROM choreslist ORDER BY userid";
+	$sql = "SELECT DISTINCT name FROM users ORDER BY name";
 }
 $result = mysqli_query($link,$sql);
 while ($myrow = mysqli_fetch_array($result)){
-     	$userid = $myrow["userid"];
-	array_push($anarray,$userid);
+     	$name = $myrow["name"];
+	array_push($anarray,$name);
 }
 echo json_encode (array('userids'=>$anarray));
 ?>

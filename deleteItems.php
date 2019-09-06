@@ -22,14 +22,14 @@ $servercount = 1;
 		$x = 0;
 		for($x;$x<=$count;$x++){
 			if ($data[$x] == $servercount){
-			echo "id = ".$id."<BR>";
+			//echo "id = ".$id."<BR>";
 				$sql2 = "UPDATE itemlist SET removed = 'Y' WHERE id ='$id'";
 				$result2 = mysqli_query($link, $sql2);
+				array_push($json,$item);
 			}
 		}
 		$servercount++;
 	}
-mysqli_close($link);	
-array_push($json,'updated');
+mysqli_close($link);
 echo json_encode (array('updated'=>$json));
 ?>

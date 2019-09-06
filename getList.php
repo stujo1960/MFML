@@ -21,7 +21,7 @@ else{
      	$notes = $myrow["notes"];
      	$userid = $myrow["userid"];
      	$checked = $myrow["checked"];
-		array_push($json,$item,$notes,$userid,$id);
+		array_push($json,$item,$notes,$userid,$id,$category);
 }
 echo json_encode (array('catigories'=>$json));
 ?>

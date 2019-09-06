@@ -13,7 +13,7 @@ $data = $array;
 				$sql3 = "UPDATE choreslist SET removed = 'Y', item = '$list',userid = '$userid' WHERE id ='500'";
 				$result3 = mysqli_query($link, $sql3);
 $servercount = 1;
-	$sql = "SELECT * FROM choreslist WHERE (removed = 'N') && (userid = '$userid') ORDER BY userid,item";
+	$sql = "SELECT * FROM choreslist WHERE (removed = 'N') && (userid = '$userid') ORDER BY frog DESC,userid,item";
      	$result = mysqli_query($link,$sql);
      	while ($myrow = mysqli_fetch_array($result)){
      		$id = $myrow["id"];
